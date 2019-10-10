@@ -1,0 +1,21 @@
+to show the version
+
+kubectl version --short
+kubectl get node
+
+
+Release the hold on versions of kubeadm and kubele
+
+sudo apt-mark unhold kubeadm kubelet
+
+sudo apt install -y kubeadm=1.14.1-00
+sudo apt-mark hold kubeadm
+kubeadm version
+sudo kubeadm upgrade plan
+sudo kubeadm upgrade apply v1.14.1
+sudo apt-mark unhold kubectl
+sudo apt install -y kubectl=1.14.1-00
+sudo apt-mark hold kubectl
+sudo apt install -y kubelet=1.14.1-00
+sudo apt-mark hold kubelet
+
